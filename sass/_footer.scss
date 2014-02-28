@@ -1,0 +1,9 @@
+.footer-wrapper {
+    @include grid-row($behavior: false);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    min-height: 5em;
+}
+.footer-contact-list {
+    @extend .text-center;
+}

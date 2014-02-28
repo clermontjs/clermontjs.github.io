@@ -1,0 +1,29 @@
+{{!< layout.hbs }}
+<section role="main">
+    <p>
+        Vous trouverez ici la liste de tous les événements ClermontJS, passés ou
+        à venir.
+    </p>
+</section>
+<section class="events-list-all">
+<h2>Tous les events</h2>
+<ul class="no-bullet">
+{{#eventList}}
+    <li class="clermontjs-event list-item {{eventClass this}}">
+        <h3 class="clermontjs-event-title {{eventClass this}}"><a href="{{url}}">{{title}}</a></h3>
+        {{> eventPitch this}}
+    </li>
+{{else}}
+    <li>Aucun événement.</li>
+{{/eventList}}
+</ul>
+</section>
+
+<div class="nav">
+    {{#if prevPage}}
+        <a href="{{prevPage.url}}">« Newer</a>
+    {{/if}}
+    {{#if nextPage}}
+        <a href="{{nextPage.url}}">Next page »</a>
+    {{/if}}
+</div>

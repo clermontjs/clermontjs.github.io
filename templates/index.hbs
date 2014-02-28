@@ -1,0 +1,33 @@
+{{!< layout.hbs }}
+<section role="main">
+    <h2 id="page-title">{{page.title}}</h2>
+    <div class="content">
+        {{{page.html}}}
+    </div>
+</section>
+<section class="upcoming-events-list">
+    <h3>Le programme</h3>
+    {{#upcoming}}
+        <div class="clermontjs-event list-item {{eventClass this}}">
+            <h3 class="clermontjs-event-title {{eventClass this}}"><a href="{{url}}">{{title}}</a></h3>
+            {{> eventPitch this}}
+        </div>
+    {{else}}
+        <p>Aucun événement à venir.</p>
+    {{/upcoming}}
+    </ul>
+</section>
+
+<section class="latest-events-list">
+    <h3>Les derniers événements</h3>
+    <ul class="no-bullet">
+    {{#past}}
+        <div class="clermontjs-event list-item {{eventClass this}}">
+            <h3 class="clermontjs-event-title {{eventClass this}}"><a href="{{url}}">{{title}}</a></h3>
+            {{> eventPitch this}}
+        </div>
+    {{else}}
+        <li>Aucun événement passé.</li>
+    {{/past}}
+    </ul>
+</section>

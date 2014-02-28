@@ -1,0 +1,30 @@
+$header-total-padding: 80px;
+$header-menu-space: $header-total-padding - 10;
+
+.header-wrapper {
+    @include grid-row($behavior: false);
+    @include clearfix;
+    padding: $header-total-padding 0;
+}
+#logo {
+    width: 190px;
+    height: 150px;
+    float:left;
+    text-align: center;
+
+    img {
+        max-height: 150px;
+    }
+}
+
+.header-title {
+    padding-left: 200px;
+}
+
+.header-nav {
+    float: right;
+    position: relative;
+    top: -$header-menu-space;
+    @include clearfix;
+    @include inline-list;
+}

@@ -1,0 +1,14 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+$include-html-classes: false;
+$include-html-type-classes: true;
+
+$anchor-font-color: #f2c80a;
+$anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -24%);
+
+@import "foundation";
+@import "01_layout";
+@import "header";
+@import "footer";
+@import "clermontjs-event";

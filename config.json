@@ -1,0 +1,28 @@
+{
+    "locals": {
+        "url": "http://clermontjs.github.io",
+        "title": "ClermontJS",
+        "headline": "La communauté JavaScript de Clermont-Ferrand.",
+        "owner": "ClermontJS",
+        "description": "ClermontJS"
+    },
+    "plugins": [
+        "./plugins/events.coffee",
+        "./plugins/wintersmith-handlebars.coffee"
+    ],
+    "require": {
+        "moment": "moment",
+        "_": "underscore",
+        "typogr": "typogr"
+    },
+    "markdown": {
+        "smartLists": true,
+        "smartypants": true
+    },
+    "events": {},
+    "handlebars": {
+        "partialDir": "partials",
+        "helperDir": "helpers"
+    },
+    "output": "public"
+}

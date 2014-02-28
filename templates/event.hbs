@@ -1,0 +1,39 @@
+{{!< layout.hbs }}
+<section role="main">
+    <article class="clermontjs-event details {{eventClass page}}">
+        <h3 class="clermontjs-event-title {{eventClass page}}">{{page.title}}</h3>
+        <div class="clermontjs-event-program">
+            {{{page.html}}}
+        </div>
+        <div class="clermontjs-event-speaker">
+            {{> eventSpeaker page}}
+        </div>
+        {{#isFutureEvent page}}
+        <div class="clermontjs-event-map">
+            <h3 class="clermontjs-event-map-title">Infos pratiques</h3>
+            {{> eventPitch page}}
+            {{{map page.metadata.location}}}
+        </div>
+        <div class="clermontjs-event-ticket">
+            <h3 class="clermontjs-event-ticket-title">Réserver sa place</h3>
+            {{ticket page}}
+        </div>
+        {{else}}
+        <div class="clermontjs-event-video">
+            <h3 class="clermontjs-event-video-title">Vidéo</h3>
+            {{video page}}
+        </div>
+        <div class="clermontjs-event-slides">
+            {{slides page}}
+        </div>
+        {{/isFutureEvent}}
+    </article>
+</section>
+<aside class="event-navigation">
+    
+</aside>
+<footer class="nav">
+    <ul class="no-bullet">
+        <li><a href="/">« Retour à l'accueil</a></li>
+    </ul>
+</footer>

@@ -1,0 +1,6 @@
+<p>
+    {{#isFutureEvent this}}Ca se passera{{else}}Ca s'est passé{{/isFutureEvent}}
+    <span class="clermontjs-event-location">{{location this}}</span>
+    le
+    <span>{{date metadata.date 'dddd D MMMM YYYY [à] H[h]mm'}}</span>
+</p>

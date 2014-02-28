@@ -1,0 +1,121 @@
+{
+    "config": {
+        "public": {
+
+            // -------------------------------------------------
+            // This is the public directory, available on the web.
+            // Put your public content there.
+            // -------------------------------------------------
+            "dir": "public",
+
+            // -------------------------------------------------
+            // This is the css directory, this is preprocessors
+            // target directory.
+            // -------------------------------------------------
+            "css": "<%= config.public.dir %>/css",
+
+            // -------------------------------------------------
+            // This is the js directory.
+            // All public javascript file must be here.
+            // All builded javascript file will end up here.
+            "js": "<%= config.public.dir %>/js",
+
+            // ------------------------------------------
+            // The compiled javascript main file.
+            // ------------------------------------------
+            "mainjs": "<%= config.public.js %>/main.js",
+
+            // ------------------------------------------
+            // Where are compiled templates located
+            // ------------------------------------------
+            "templates": "<%= config.public.js %>/templates",
+
+            // -------------------------------------------------
+            // This is the url where vendors are available from.
+            // All bower components are served from this url.
+            // -------------------------------------------------
+            "vendorsUrl": "/vendors",
+
+            // -------------------------------------------------
+            // This is the vendors directory.
+            // All bower components should be copied here at
+            // release.
+            // -------------------------------------------------
+            "vendors": "<%= config.public.dir %><%= config.public.vendorsUrl %>",
+
+            // -------------------------------------------------
+            // This is the fonts public directory.
+            // All fonts should be copied here at release.
+            //
+            // If you use a css preprocessor, there is no way
+            // to push this variable to it, so you must update
+            // it manually.
+            // -------------------------------------------------
+            "font": "<%= config.public.dir %>/fonts"
+        },
+        "www": {
+            // -------------------------------------------------
+            // This is the sources root directory.
+            // Mostly used in this file.
+            // -------------------------------------------------
+            "dir": "src/www",
+
+            // -------------------------------------------------
+            // Directory where frontend javascript is located.
+            // In dev mode those scripts are available under
+            // `/js` url.
+            // -------------------------------------------------
+            "js": "<%= config.www.dir %>",
+
+            // ------------------------------------------
+            // The requirejs config file.
+            // ------------------------------------------
+            "requireConfig": "<%= config.www.js %>/config.js",
+
+            // ------------------------------------------
+            // Where are original templates located
+            // ------------------------------------------
+            "templates": "<%= config.www.js %>/templates",
+
+            // -------------------------------------------------
+            // This is the sass sources root directory.
+            // -------------------------------------------------
+            "sass": "sass",
+
+            // -------------------------------------------------
+            // Directory where frontend javascript is located.
+            // In dev mode those scripts are available under
+            // `/vendors` url.
+            // -------------------------------------------------
+            "bower": "bower_components",
+
+            // -------------------------------------------------
+            // Directory where css sources are located.
+            // -------------------------------------------------
+            "css": "assets/css"
+        },
+        "static": {
+            // -------------------------------------------------
+            // Directory where static sources are located.
+            // -------------------------------------------------
+            "dir": "."
+        },
+        "server": {
+            // Directory where server javascript is located.
+            // -------------------------------------------------
+            "dir": "src/server",
+
+            // -------------------------------------------------
+            // Prod server file.
+            // -------------------------------------------------
+            "prod": "<%= config.server.dir %>/index.js",
+
+            // -------------------------------------------------
+            // Dev server file.
+            // -------------------------------------------------
+            "dev": "<%= config.server.dir %>/index-dev.js"
+        }
+    }
+}
+
+

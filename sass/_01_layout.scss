@@ -1,0 +1,19 @@
+body, html {
+    background: #f3f3f3;
+}
+#header {
+    border-top: 3px solid #f2c80a;
+    border-bottom: 1px dashed #747471;
+    background-color: #fff;
+}
+#content-wrapper {
+    padding: 50px 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+#footer {
+    background: lightgrey;
+    border-top: 1px solid #fff;
+}
+.body-wrapper {
+    @include grid-row($behavior: false);
+}

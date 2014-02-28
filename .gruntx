@@ -1,0 +1,7 @@
+{
+    "frontFilesLocation": "src/www",
+    "moduleLoader": "requirejs",
+    "templateEngine": "handlebars",
+    "cssPreprocessor": "sass",
+    "cssFramework": "foundation"
+}

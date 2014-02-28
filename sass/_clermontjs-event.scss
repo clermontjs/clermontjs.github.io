@@ -1,0 +1,73 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+.clermontjs-event-label {
+    display:block;
+    height: 100%;
+    border-left: 10px solid transparent;
+    border-right: 1px solid transparent;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    @include side-radius($side: right, $radius: $global-radius - 1);
+}
+
+.clermontjs-event {
+
+    &.list-item {
+        position: relative;
+        padding-right: 20px;
+        @include panel(#fff);
+        @include radius($radius: $global-radius);
+
+        &.upcoming {
+            &::before {
+                content: '';
+                border-color: #f2c80a;
+                @extend .clermontjs-event-label;
+            }
+        }
+        &.past {
+            &::before {
+                content: '';
+                border-color: #DCDCCB;
+                @extend .clermontjs-event-label;
+            }
+        }
+    }
+
+    &.details {
+        @include panel(#fff);
+        @include radius($radius: $global-radius);
+    }
+
+}
+.clermontjs-event-title {
+    &:before {
+        @extend .fi-projection-screen:before;
+        margin-right: 0.5em;
+    }
+    &.upcoming, &.upcoming:before {
+        color: #f2c80a;
+    }
+    &.past, &.past:before {
+        color: #747471;
+    }
+}
+.clermontjs-event-map-title {
+    &:before {
+        @extend .fi-map:before;
+        margin-right: 0.5em;
+    }
+}
+.clermontjs-event-ticket-title {
+    &:before {
+        @extend .fi-ticket:before;
+        margin-right: 0.5em;
+    }
+}
+.map.center {
+    display: block;
+    margin: 1em auto;
+    width: 600px;
+}
