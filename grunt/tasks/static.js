@@ -43,7 +43,6 @@ module.exports = function (grunt) {
                 // ignore .git
                 return f.indexOf('/.git') === -1;
             }).forEach(function (f) {
-                grunt.log.writeln('Will delete ' + f);
                 grunt.file.delete(f);
             });
         }

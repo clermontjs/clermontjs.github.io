@@ -6,12 +6,24 @@ You successfully generated your new application.
 Refer to the [Getting started guide](doc/getting-statded.md) to learn more about
 how this project works.
 
-## Overview
+## Install
 
 ``` javascript
+$ git clone https://github.com/clermontjs/clermontjs.github.io && cd $_
 $ ./bin/bootstrap.sh
 $ grunt dev
 ```
+
+## Publish
+
+To publish a new version of the website, just run:
+
+```
+./bin/publish.sh
+```
+
+It builds, commit and push the release pages, then update submodule in sources
+branch.
 
 ## License
 
