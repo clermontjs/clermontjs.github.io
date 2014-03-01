@@ -87,6 +87,12 @@ video: false                    # the youtube video id or false.
 Some content goes here
 ```
 
+Related helpers:
+
+* It is possible to use any event related helpers.
+
+* `suggestionList`: display a suggestion list
+
 ### Speaker
 
 Speakers are stored in `contents/speakers/` directory.

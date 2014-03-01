@@ -6,11 +6,20 @@
     </div>
 </section>
 <section class="upcoming-events-list">
-    <h3>Le programme</h3>
+    <h3>Prochain événement</h3>
     {{#futureEvents}}
         <div class="clermontjs-event list-item {{eventClass this}}">
-            <h3 class="clermontjs-event-title {{eventClass this}}"><a href="{{url}}">{{title}}</a></h3>
+            <h3 class="clermontjs-event-title {{eventClass this}}">
+                <a href="{{url}}">{{title}}</a>
+                <small>par {{speaker this}}</small>
+            </h3>
             {{> eventPitch this}}
+            <div>{{{this.html}}}</div>
+            <p class="text-center clermontjs-event-actions">
+                <a class="clermontjs-event-book-btn" href="{{url}}#clermontjs-event-ticket">
+                    <i class="fi-ticket"></i>  Je réserve ma place
+                </a>
+            </p>
         </div>
     {{else}}
         <p>Aucun événement à venir.</p>
@@ -23,11 +32,30 @@
     <ul class="no-bullet">
     {{#pastEvents}}
         <div class="clermontjs-event list-item {{eventClass this}}">
-            <h3 class="clermontjs-event-title {{eventClass this}}"><a href="{{url}}">{{title}}</a></h3>
+            <h3 class="clermontjs-event-title {{eventClass this}}">
+                <a href="{{url}}">{{title}}</a>
+                <small>par {{speaker this}}</small>
+            </h3>
             {{> eventPitch this}}
         </div>
     {{else}}
         <li>Aucun événement passé.</li>
     {{/pastEvents}}
+    </ul>
+</section>
+
+<section class="suggestions-list">
+    <h3>Les suggestions pour plus tard</h3>
+    <ul class="no-bullet">
+    {{#suggestionList}}
+        <div class="clermontjs-event list-item {{eventClass this}}">
+            <h4 class="clermontjs-event-title {{eventClass this}}">
+                <a href="{{url}}">{{title}}</a>
+                <small>par {{speaker this}}</small>
+            </h4>
+        </div>
+    {{else}}
+        <li>Aucune suggestion pour le moment.</li>
+    {{/suggestionList}}
     </ul>
 </section>

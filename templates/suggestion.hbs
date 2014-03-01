@@ -1,0 +1,23 @@
+{{!< layout.hbs }}
+<section role="main">
+    <div class="suggestion-alert">
+        <p>Cet événement est une suggestion.</p>
+        <p>Il n'y a pas d'autre moyen aujourd'hui pour suggérer un événement que
+        d'ouvrir une issue ou une pull request.</p>
+    </div>
+    <article class="clermontjs-event details {{eventClass page}}">
+        <h3 class="clermontjs-event-title {{eventClass page}}">{{page.title}}</h3>
+        <div class="clermontjs-event-program">
+            {{{page.html}}}
+        </div>
+        <div class="clermontjs-event-speaker">
+            {{> eventSpeaker page}}
+        </div>
+    </article>
+</section>
+<footer class="nav">
+    <ul class="no-bullet">
+        <li><a href="/">« Retour à l'accueil</a></li>
+    </ul>
+</footer>
+

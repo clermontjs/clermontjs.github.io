@@ -1,0 +1,38 @@
+// Everything is on a single columns for small devices.
+.upcoming-events-list {
+    @include grid-column($columns: 12, $last-column:true);
+    @include box-sizing(border-box);
+    @include clearfix;
+}
+.latest-events-list {
+    @include grid-column($columns: 12, $last-column: true);
+    @include box-sizing(border-box);
+}
+.suggestions-list {
+    @include grid-column($columns: 12, $last-column:true);
+    @include box-sizing(border-box);
+}
+
+// 2 columns for list content when large screen
+@media #{$large-up} {
+    .latest-events-list {
+        @include grid-column($columns: 6);
+    }
+    .suggestions-list {
+        @include grid-column($columns: 6, $last-column:true);
+    }
+}
+
+.clermontjs-event-actions {
+    padding-top: 2em;
+}
+.clermontjs-event-book-btn {
+    @include button($bg: #747471);
+
+    i {
+        font-size: 1.3em;
+        padding-left: 0.5em;
+        margin-left: -1em;
+        margin-right: 0.5em;
+    }
+}

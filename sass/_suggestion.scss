@@ -1,0 +1,7 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+.suggestion-alert {
+    @include alert($bg: #f08a24);
+    @extend .text-center;
+}

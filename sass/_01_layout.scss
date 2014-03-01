@@ -21,3 +21,7 @@ body, html {
 .body-wrapper {
     @include grid-row($behavior: false);
 }
+section[role=main] {
+    @include grid-column($columns: 12, $last-column: true);
+    @include box-sizing(border-box);
+}
