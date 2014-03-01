@@ -92,7 +92,7 @@ module.exports = function (grunt) {
     grunt.loadTasks(path.resolve(__dirname, 'grunt', 'tasks'));
 
     // Main tasks.
-    grunt.registerTask('build:release', 'Build release code.', ['templates:release', 'app:release', 'style:release', 'doc:release']);
+    grunt.registerTask('build:release', 'Build release code.', ['static:clean', 'templates:release', 'app:release', 'style:release', 'doc:release', 'static:release']);
 
     grunt.registerTask('dev', 'Start development environment.', ['static:clean', 'concurrent:dev']);
 

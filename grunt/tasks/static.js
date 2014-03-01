@@ -23,7 +23,7 @@ module.exports = function (grunt) {
     grunt.registerTask('static:build', 'Generate static content pages', function () {
         // wintersmith triggers several times the done callback...
         // wrap it into once, there should be no arm.
-        var done = _.once(this.async());
+        var done = _.debounce(this.async(), 500);
         var env = wintersmith(patchWintersmithConfig());
 
 
@@ -39,7 +39,13 @@ module.exports = function (grunt) {
         grunt.log.writeln('Build output is: ' + output);
 
         if (grunt.file.exists(output)) {
-            grunt.file.delete(output);
+            grunt.file.expand([output + '/*']).filter(function (f) {
+                // ignore .git
+                return f.indexOf('/.git') === -1;
+            }).forEach(function (f) {
+                grunt.log.writeln('Will delete ' + f);
+                grunt.file.delete(f);
+            });
         }
     });
 
