@@ -52,7 +52,7 @@ Some content goes here
 
 Related helpers:
 
-* `eventClass`: add event class (upcoming, past).
+* `eventClass`: add event class (upcoming, past, suggestion).
 * `video`: Display embedded event video.
 * `slides`: Display link to slides.
 
