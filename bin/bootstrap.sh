@@ -62,6 +62,11 @@ function install_bower {
     $DIR/node_modules/.bin/bower install
 }
 
+function install_submodule {
+    log "Install git submodules"
+    git submodule update --init
+}
+
 function install_gem {
     log "Install gem files";
     bundle install
@@ -72,9 +77,12 @@ function install {
     install_npm
     install_bower
     #install_gem
+    install_submodule
 }
 
-if [ install -eq 0 ] ; then
+install
+
+if [ $? -eq 0 ] ; then
     log "Everything went fine."
 else
     error "An error append, please check command output for more information."

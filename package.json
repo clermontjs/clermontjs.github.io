@@ -21,6 +21,7 @@
     "wintersmith-handlebars": "0.0.5",
     "wintersmith": "~2.0.10",
     "grunt-contrib-connect": "~0.7.0",
-    "handlebars": "~2.0.0-alpha.1"
+    "handlebars": "~2.0.0-alpha.1",
+    "bower": "~1.2.8"
   }
 }
