@@ -8,7 +8,7 @@
         <div class="clermontjs-event-speaker">
             {{> eventSpeaker page}}
         </div>
-        {{#isFutureEvent page}}
+        {{#ifFutureEvent page}}
         <div class="clermontjs-event-map">
             <h3 class="clermontjs-event-map-title">Infos pratiques</h3>
             {{> eventPitch page}}
@@ -26,7 +26,7 @@
         <div class="clermontjs-event-slides">
             {{slides page}}
         </div>
-        {{/isFutureEvent}}
+        {{/ifFutureEvent}}
     </article>
 </section>
 <aside class="event-navigation">
