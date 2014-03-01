@@ -3,6 +3,9 @@
     margin-top: 2em;
     margin-bottom: 2em;
     min-height: 5em;
+    a {
+        color: #5a5a58;
+    }
 }
 .footer-contact-list {
     @extend .text-center;
