@@ -72,6 +72,9 @@ module.exports = function (grunt) {
             }
         },
         'concat': {
+            'options': {
+                'separator': ';\n'
+            },
             'app-kernel-dev': {
                 'src': [
                     '<%= config.www.bower %>/requirejs/require.js',
