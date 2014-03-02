@@ -3,15 +3,7 @@ requirejs.config({
     baseUrl: '/js',
     paths: {
         'jquery': '<%= vendors %>/jquery/dist/jquery',
-        'text': '<%= vendors %>/requirejs-text/text'
-    }
-});
-
-// {{{ foundation module configuration
-/*global requirejs*/
-requirejs.config({
-    deps: ['foundation'],
-    paths: {
+        'text': '<%= vendors %>/requirejs-text/text',
         'modernizr': '<%= vendors %>/modernizr/modernizr',
         'fastclick': '<%= vendors %>/fastclick/lib/fastclick',
         'foundation/abide': '<%= vendors %>/foundation/js/foundation/foundation.abide',
@@ -55,5 +47,3 @@ requirejs.config({
         }
     }
 });
-
-// foundation module configuration }}}

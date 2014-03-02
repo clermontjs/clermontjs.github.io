@@ -1,6 +1,7 @@
 /* global require, console */
 require([
-    'jquery'
+    'jquery',
+    'foundation'
 ], function () {
     'use strict';
 

@@ -1,7 +1,7 @@
 // This is the foundation initialization.
 // refer to [foundation documentation](http://foundation.zurb.com/docs/javascript.html#configuration)
 // to learn more.
-require([
+define([
     'foundation/foundation'
 //  , 'foundation/abide'
 //  , 'foundation/accordion'

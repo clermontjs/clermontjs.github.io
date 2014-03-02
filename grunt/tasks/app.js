@@ -27,7 +27,7 @@ module.exports = function (grunt) {
         var src = grunt.file.read(options.src);
         src = grunt.template.process(src, {data: options});
 
-        grunt.file.write(options.dest, [src, content].join(';'));
+        grunt.file.write(options.dest, [src, content].join(';\n'));
     });
 
     grunt.extendConfig({
