@@ -419,7 +419,7 @@ var requirejs, require, define;
         jQuery: true
     };
 }());
-
+;
 /* global requirejs */
 requirejs.config({
     baseUrl: '/js',
