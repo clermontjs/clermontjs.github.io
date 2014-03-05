@@ -7,6 +7,11 @@ $include-html-type-classes: true;
 $anchor-font-color: #f2c80a;
 $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -24%);
 
+img, object, embed {
+    height: auto;
+    max-width: 100%;
+}
+
 @import "foundation";
 @import "01_layout";
 @import "header";
