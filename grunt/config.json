@@ -108,12 +108,12 @@
             // -------------------------------------------------
             // Prod server file.
             // -------------------------------------------------
-            "prod": "<%= config.server.dir %>/index.js",
+            "prod": "<%= config.server.dir %>/index",
 
             // -------------------------------------------------
             // Dev server file.
             // -------------------------------------------------
-            "dev": "<%= config.server.dir %>/index-dev.js"
+            "dev": "<%= config.server.dir %>/index-dev"
         }
     }
 }
