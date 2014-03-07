@@ -96,6 +96,6 @@ module.exports = function (grunt) {
     }
 
     function serverApp(connect, main) {
-        return require(grunt.config.get(main));
+        return require(require('path').join('../../', grunt.config.get(main)));
     }
 };

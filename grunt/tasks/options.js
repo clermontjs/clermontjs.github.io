@@ -84,7 +84,7 @@ module.exports = function (grunt) {
     // load a commented JSON file, strip comments
     // and returns parser JSON.
     function readGruntOptions(filename) {
-        var commentRe = /^\s*\/\/.*\n/gm;
+        var commentRe = /^\s*\/\/.*$/gm;
         if (!grunt.file.exists(filename)) {
             return {};
         }
