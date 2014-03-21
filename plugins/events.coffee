@@ -13,12 +13,12 @@ module.exports = (env, callback) ->
         options[key] ?= defaults[key]
 
     isSuggestion = (event) ->
-        !!event.metadata.date
+        !event.metadata.date
 
     isEventBefore = (event, date) ->
         if isSuggestion event
             return false
-        return new Date(event.date) - date <= 0
+        (new Date(event.metadata.date)) < date
 
 
     # A content helper to get all events, ordered by date.
@@ -34,24 +34,23 @@ module.exports = (env, callback) ->
     # A content helper to get all events, ordered by date.
     getEvents = (contents) ->
         events = getRawEvents contents
-        events = events.filter (a) -> a.metadata.date
-        events.sort (a, b) -> b.date - a.date
+        events = events.filter (a) -> !(isSuggestion a)
+        events.sort (a, b) -> b.metadata.date - a.metadata.date
 
     getUpcomingEvents = (contents) ->
         events = getEvents contents
         now = (new Date)
         return events.filter (event) ->
-            return !isEventBefore event, now
+            !(isEventBefore event, now)
 
     getPastEvents = (contents) ->
         events = getEvents contents
         now = new Date
-        return events.filter (event) ->
-            return isEventBefore event, now
+        return events.filter (event) -> isEventBefore event, now
 
     getSuggestions = (contents) ->
         events = getRawEvents contents
-        events.filter (a) -> !a.metadata.date
+        events.filter (a) -> isSuggestion a
 
     ### Add some helpers to access data ###
 
