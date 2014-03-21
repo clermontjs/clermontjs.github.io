@@ -4,7 +4,7 @@ title: "JS101: Une introduction à JavaScript"
 date: 2014-03-11 19:00
 location: supinfo
 eventbrite: 10781603065
-slides: false
+slides: http://themouette.github.io/slides-clermontjs-js101/
 video: false
 speaker: themouette
 ---
