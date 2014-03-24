@@ -61,6 +61,8 @@ module.exports = function (grunt) {
                 'mainConfigFile': '<%= config.public.mainjs %>',
                 'paths': {
                     'kernel': 'kernel',
+                    'video': 'video',
+                    'popcorn-slides': 'popcorn-slides',
                     'templates': '../../<%= config.public.templates %>'
                 }
             },
