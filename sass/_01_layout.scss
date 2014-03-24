@@ -17,6 +17,7 @@ body, html {
     line-height: 2em;
     color: #868686;
     text-shadow: 0 1px 0 #eee;
+    min-height: 6em;
 }
 .body-wrapper {
     @include grid-row($behavior: false);
