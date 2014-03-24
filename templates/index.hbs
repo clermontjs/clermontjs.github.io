@@ -6,7 +6,13 @@
     </div>
 </section>
 <section class="upcoming-events-list">
-    <h3>Prochain événement</h3>
+    {{#hasFutureEvent}}
+        <h3>Prochain événement</h3>
+    {{else}}
+    <div class="index-program-empty">
+        <h3>Pour le moment il n'y a pas d'événement programmé.</h3>
+    </div>
+    {{/hasFutureEvent}}
     {{#futureEvents}}
         <div class="clermontjs-event list-item {{eventClass this}}">
             <h3 class="clermontjs-event-title {{eventClass this}}">
@@ -22,7 +28,6 @@
             </p>
         </div>
     {{else}}
-        <p>Pour le moment il n'y a pas d'événement programmé.</p>
     {{/futureEvents}}
     </ul>
 </section>
