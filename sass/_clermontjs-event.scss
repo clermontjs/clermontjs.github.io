@@ -66,6 +66,115 @@
         margin-right: 0.5em;
     }
 }
+.clermontjs-event-video{
+    .fi-play-video:before{
+        font-size: 1.8em;
+        vertical-align: middle;
+    }
+}
+
+.clermontjs-event-video-player {
+
+    &.fullscreen{
+        position:relative;
+        width: 100%;
+        height: 100%;
+        .clermontjs-event-slidescontainer{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .clermontjs-event-videocontainer {
+            position:absolute;
+            width: 373px;
+            height: 210px;
+            z-index: 100;
+            margin: 8px 3px;
+        }
+
+        @media #{$small-up} {
+            .clermontjs-event-videocontainer {
+                position:absolute;
+                width: 200px;
+                height: 112px;
+                z-index: 100;
+                margin: 8px 3px;
+            }
+        }
+
+        @media #{$medium-up} {
+            .clermontjs-event-videocontainer {
+                position:absolute;
+                width: 200px;
+                height: 112px;
+                z-index: 100;
+                margin: 8px 3px;
+            }
+        }
+
+        @media #{$large-up} {
+            .clermontjs-event-videocontainer {
+                position:absolute;
+                width: 373px;
+                height: 210px;
+                z-index: 100;
+                margin: 8px 3px;
+            }
+        }
+    }
+
+    .clermontjs-event-videocontainer {
+        width: 560px;
+        height: 315px;
+        margin: 0 auto 1em;
+    }
+
+    .clermontjs-event-slidescontainer{
+        width: 928px;
+        height: 522px;
+        margin: 0 auto 1em;
+    }
+
+    @media #{$small-up} {
+        .clermontjs-event-videocontainer {
+            width: 500px;
+            height: 281px;
+        }
+
+        .clermontjs-event-slidescontainer{
+            width: 500px;
+            height: 281px;
+        }
+    }
+
+    @media #{$medium-up} {
+        .clermontjs-event-videocontainer {
+            width: 560px;
+            height: 315px;
+        }
+
+        .clermontjs-event-slidescontainer{
+            width: 560px;
+            height: 315px;
+        }
+    }
+
+    @media #{$large-up} {
+        .clermontjs-event-videocontainer {
+            width: 560px;
+            height: 315px;
+        }
+
+        .clermontjs-event-slidescontainer{
+            width: 928px;
+            height: 522px;
+        }
+    }
+}
+
+
+
 .map.center {
     display: block;
     margin: 1em auto;

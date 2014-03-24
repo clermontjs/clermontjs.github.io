@@ -21,11 +21,17 @@ requirejs.config({
         'foundation/tab': '<%= vendors %>/foundation/js/foundation/foundation.tab',
         'foundation/tooltip': '<%= vendors %>/foundation/js/foundation/foundation.tooltip',
         'foundation/topbar': '<%= vendors %>/foundation/js/foundation/foundation.topbar',
-        'foundation/foundation': '<%= vendors %>/foundation/js/foundation/foundation'
+        'foundation/foundation': '<%= vendors %>/foundation/js/foundation/foundation',
+        'screenfull' : '//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min',
+        'popcorn': 'http://popcornjs.org/code/dist/popcorn-complete.min',
+        'popcorn-slides': 'popcorn-slides',
     },
 
     shim: {
         'modernizr': { exports: 'Modernizr' },
+        'screenfull': {exports: 'screenfull'},
+        'popcorn': { exports: 'Popcorn' },
+        'popcorn-slides': { deps: ['popcorn'] },
         'foundation/abide': { deps: ['foundation/foundation'] },
         'foundation/accordion': { deps: ['foundation/foundation'] },
         'foundation/alert': { deps: ['foundation/foundation'] },
