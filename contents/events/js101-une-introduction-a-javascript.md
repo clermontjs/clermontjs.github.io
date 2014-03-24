@@ -9,6 +9,9 @@ slides: http://themouette.github.io/slides-clermontjs-js101/
 video: 5jmJN-bf_Zc
 tc: >
   [{
+      "start": "0",
+      "url": ""
+  },{
       "start": "1:28",
       "url": "#/1"
   }, {

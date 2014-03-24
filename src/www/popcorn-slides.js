@@ -1,56 +1,57 @@
-define(['popcorn'], function(Popcorn){
-    Popcorn.plugin("iframe", {
-        _setup: function(options) {
+/* global define */
+define(['jquery', 'popcorn', 'screenfull'], function ($, Popcorn, screenfull) {
+    'use strict';
+    Popcorn.plugin('iframe', {
+        _setup: function (options) {
             options._iframe = document.getElementById(options.target);
         },
-        start: function(event, options) {
+        start: function (event, options) {
             options._iframe.src = options.src;
-            options._iframe.style.display = "inline";
-        },
-        end: function(event, options) {},
-        _teardown: function(options) {}
+            options._iframe.style.display = 'inline';
+        }
     });
 
-    Popcorn.setupSlides = function(video, conf) {
-        var isLocked = true,
-            player = document.querySelector('.player'),
-            fullScreenButton = player.querySelector('.fullscreen'),
-            slides = player.querySelector('.slides'),
-            lockButton = player.querySelector('.lock'),
-            iFs = fullScreenButton.querySelector('i'),
-            iLock = lockButton.querySelector('i');
+    Popcorn.setupSlides = function (video, conf) {
+        var $player = $('.clermontjs-event-video-player'),
+            $fullScreenButton = $('.clermontjs-event-video-player-fullscreen');
 
-/*        fullScreenButton.addEventListener('click', function(event) {
+        $fullScreenButton.click(function (event) {
             event.preventDefault();
-            screenfull.toggle(player);
+            screenfull.toggle($player.get(0));
         });
 
         if (screenfull.enabled) {
+            $('.clermontjs-event-video-fullscreen-calout').show();
+
             document.addEventListener(screenfull.raw.fullscreenchange, function () {
-                iFs.classList.toggle('fi-arrows-out', !screenfull.isFullscreen);
-                iFs.classList.toggle('fi-arrows-in', screenfull.isFullscreen);
-                player.classList.toggle('fullscreen', screenfull.isFullscreen)
+                $player.toggleClass('fullscreen', screenfull.isFullscreen);
             });
-        }else{
-            fullScreenButton.parentNode.removeChild(fullScreenButton);;
         }
 
-        lockButton.addEventListener('click', function(event){
-            iLock.classList.toggle('fi-unlock', !isLocked);
-            iLock.classList.toggle('fi-lock', isLocked);
+        function getTc(input) {
+            return (input + '').split(':').reduce(function (prev, curr, index, array) {
+                curr = parseInt(curr, 10);
+                switch (index) {
+                    case 0:
+                        return array.length === 3 ? prev + curr * 3600 : prev + curr * 60;
+                    case 1:
+                        return array.length === 3 ? prev + curr * 60 : prev + curr;
+                    case 2:
+                        return prev + curr;
+                    default:
+                        return prev;
+                }
+            }, 0);
+        }
 
-            isLocked = !isLocked;
-        });*/
-
-        conf.tc.forEach(function(item, index) {
-            var start = index > 0 ? item.start : 0,
-                end = index >= conf.tc.length - 1 ? null : conf.tc[index + 1].start;
+        conf.tc.forEach(function (item, index) {
+            var end = index >= conf.tc.length - 1 ? null : conf.tc[index + 1].start;
             video.iframe({
                 target: conf.target,
-                start: start, // seconds
-                end: end,
-                src: conf.baseurl + item.hash
+                start: getTc(item.start), // seconds
+                end: getTc(end),
+                src: conf.baseurl + (item.url || '')
             });
         });
-    }
-})
+    };
+});

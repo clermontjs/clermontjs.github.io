@@ -1,11 +1,11 @@
-/* global require, console */
+/* global require */
 require([
     'jquery',
     'foundation'
-], function () {
+], function ($) {
     'use strict';
 
-    if($('.clermontjs-event-video').length > 0){
+    if ($('[data-video]').length > 0) {
         require(['video']);
     }
 });
