@@ -20,7 +20,8 @@
         </div>
         {{else}}
         <div class="clermontjs-event-video" id="clermontjs-event-video">
-            <h3 class="clermontjs-event-video-title">Vidéo</h3>
+
+            <h3 class="clermontjs-event-video-title" data-tc="{{JSONstringify page.metadata.tc}}">Vidéo</h3>
             {{video page}}
         </div>
         <div class="clermontjs-event-slides">
@@ -30,7 +31,7 @@
     </article>
 </section>
 <aside class="event-navigation">
-    
+
 </aside>
 <footer class="nav">
     <ul class="no-bullet">

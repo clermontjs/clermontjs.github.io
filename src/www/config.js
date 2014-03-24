@@ -21,11 +21,15 @@ requirejs.config({
         'foundation/tab': '<%= vendors %>/foundation/js/foundation/foundation.tab',
         'foundation/tooltip': '<%= vendors %>/foundation/js/foundation/foundation.tooltip',
         'foundation/topbar': '<%= vendors %>/foundation/js/foundation/foundation.topbar',
-        'foundation/foundation': '<%= vendors %>/foundation/js/foundation/foundation'
+        'foundation/foundation': '<%= vendors %>/foundation/js/foundation/foundation',
+        'popcorn': 'http://popcornjs.org/code/dist/popcorn-complete.min',
+        'popcorn-slides': 'popcorn-slides',
     },
 
     shim: {
         'modernizr': { exports: 'Modernizr' },
+        'popcorn': { exports: 'Popcorn' },
+        'popcorn-slides': { deps: 'Popcorn' },
         'foundation/abide': { deps: ['foundation/foundation'] },
         'foundation/accordion': { deps: ['foundation/foundation'] },
         'foundation/alert': { deps: ['foundation/foundation'] },
