@@ -13,7 +13,7 @@ module.exports = (env, callback) ->
         options[key] ?= defaults[key]
 
     isSuggestion = (event) ->
-        !!event.metadata.date
+        !event.metadata.date
 
     isEventBefore = (event, date) ->
         if isSuggestion event
