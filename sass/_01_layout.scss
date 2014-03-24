@@ -1,22 +1,22 @@
 body, html {
-    background: #f3f3f3;
+    background: $very-light-grey;
 }
 #header {
-    border-top: 3px solid #f2c80a;
-    border-bottom: 1px dashed #747471;
-    background-color: #fff;
+    border-top: 3px solid $flashy-yellow;
+    border-bottom: 1px dashed $brown;
+    background-color: $header-background;
 }
 #content-wrapper {
     padding: 50px 0;
-    border-bottom: 1px solid #c6c6c6;
+    border-bottom: 1px solid $light-grey;
 }
 #footer {
-    background: lightgrey;
-    border-top: 1px solid #fff;
+    background: $light-grey;
+    border-top: 1px solid $header-background;
     font-size: 0.8em;
     line-height: 2em;
-    color: #868686;
-    text-shadow: 0 1px 0 #eee;
+    color: $grey;
+    text-shadow: 0 1px 0 $light-grey;
     min-height: 6em;
 }
 .body-wrapper {

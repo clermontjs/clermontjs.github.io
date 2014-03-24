@@ -17,41 +17,44 @@
     &.list-item {
         position: relative;
         padding-right: 20px;
-        @include panel(#fff);
+        @include panel($panel-event);
         @include radius($radius: $global-radius);
 
         &.upcoming {
             &::before {
                 content: '';
-                border-color: #f2c80a;
+                border-color: $flashy-yellow;
                 @extend .clermontjs-event-label;
             }
         }
         &.past {
             &::before {
                 content: '';
-                border-color: #DCDCCB;
+                border-color: $light-brown;
                 @extend .clermontjs-event-label;
             }
         }
     }
 
     &.details {
-        @include panel(#fff);
+        @include panel($panel-event);
         @include radius($radius: $global-radius);
     }
 
 }
 .clermontjs-event-title {
+    // Add an icon to event title.
     &:before {
         @extend .fi-projection-screen:before;
         margin-right: 0.5em;
     }
+    // set color depending on the timeline.
+    // wether event is in the future or past, it will get the according class.
     &.upcoming, &.upcoming:before {
-        color: #f2c80a;
+        color: $flashy-yellow;
     }
     &.past, &.past:before {
-        color: #747471;
+        color: $brown;
     }
 }
 .clermontjs-event-map-title {

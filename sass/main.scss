@@ -1,21 +1,67 @@
+// This is the main entry point for ClermontJS css.
+//
+// Theme relies on foundation 5, and use provided mixins.
+
+
 // Make sure the charset is set appropriately
 @charset "UTF-8";
 
+//////////////////////////////////////
+//                                  //
+//  Declare colors                  //
+//                                  //
+//////////////////////////////////////
+
+// Some shade of grey
+$very-light-grey: #f3f3f3;
+$light-grey: lightgrey;
+$grey: #868686;
+$dark-grey: #5a5a58;
+
+// Yellow is the tonic color
+$flashy-yellow: #f2c80a;
+$yellow: scale-color($flashy-yellow, $lightness: -24%);
+
+// Brown is the secondar color
+$brown: #747471;
+$light-brown: #DCDCCB;
+
+// specific components colors
+// Those colors are not meant to be used much.
+$header-background: #fff;
+$panel-event: #fff;
+$panel-suggest: $yellow;
+
+
+//////////////////////////////////////
+//                                  //
+//  foundation settings override    //
+//                                  //
+//////////////////////////////////////
+
+// We don't want html-classes to be automaticly included,
+// as most of them will be unused.
 $include-html-classes: false;
+// But we want the type classes
 $include-html-type-classes: true;
+// replace some default colors
+$anchor-font-color: $flashy-yellow;
+$anchor-font-color-hover: $yellow;
 
-$anchor-font-color: #f2c80a;
-$anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -24%);
-
+// This should go in a base file.
 img, object, embed {
     height: auto;
     max-width: 100%;
 }
 
+// Choose which part of foundation to include in here
 @import "foundation";
+// This is the 3 main layout blocks
 @import "01_layout";
 @import "header";
 @import "footer";
-@import "clermontjs-event";
-@import "suggestion";
-@import "index";
+
+// All the component related css are located here
+@import "clermontjs-event"; // events, as list or expanded
+@import "suggestion";       // suggest an event
+@import "index";            // index specific styles.
