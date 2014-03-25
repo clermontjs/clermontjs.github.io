@@ -1,11 +1,8 @@
 /* global require */
 require([
     'jquery',
+    'video',
     'foundation'
-], function ($) {
+], function () {
     'use strict';
-
-    if ($('[data-video]').length > 0) {
-        require(['video']);
-    }
 });

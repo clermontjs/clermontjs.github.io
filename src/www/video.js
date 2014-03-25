@@ -5,6 +5,12 @@ define([
     'popcorn-slides'
 ], function ($, Popcorn) {
     'use strict';
+
+    if (!$('[data-video]').length) {
+        // no video means early return
+        return null;
+    }
+
     var $dataItem = $('[data-video]'),
         videoId = $dataItem.data('video'),
         slidesURL = $dataItem.data('slides'),
