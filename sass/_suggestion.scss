@@ -2,6 +2,6 @@
 @charset "UTF-8";
 
 .suggestion-alert {
-    @include alert($bg: #f08a24);
+    @include alert($bg: $panel-suggest);
     @extend .text-center;
 }

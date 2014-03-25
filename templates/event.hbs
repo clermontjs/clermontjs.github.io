@@ -20,17 +20,28 @@
         </div>
         {{else}}
         <div class="clermontjs-event-video" id="clermontjs-event-video">
-            <h3 class="clermontjs-event-video-title">Vidéo</h3>
-            {{video page}}
+            <h3 class="clermontjs-event-video-title" data-video="{{page.metadata.video}}" data-slides="{{page.metadata.slides}}" data-tc="{{JSONstringify page.metadata.tc}}">Vidéo &amp; Slides</h3>
+            <noscript>
+                <p>Javascript doit être activé pour regarder les vidéos.</p>
+            </noscript>
+            <div class="clermontjs-event-video-fullscreen-calout"> <h5><i class="fi-play-video"></i> Confort</h5>
+                <p>Les slides sont synchronisées sur la vidéo, pour plus de confort passez en plein écran <a class="clermontjs-event-video-player-fullscreen" href="#" title="Fullscreen"><i class="fi-arrows-out"></i></a></p>
+            </div>
+            <div class="clermontjs-event-video-player">
+                <div class="clermontjs-event-videocontainer">
+                </div>
+                <div class="clermontjs-event-slidescontainer"><iframe id="clermontjs-event-slides-iframe" width="100%" height="100%" frameborder="0"></iframe></div>
+            </div>
+            {{!video page}}
         </div>
-        <div class="clermontjs-event-slides">
+        <!-- <div class="clermontjs-event-slides">
             {{slides page}}
-        </div>
+        </div> -->
         {{/ifFutureEvent}}
     </article>
 </section>
 <aside class="event-navigation">
-    
+
 </aside>
 <footer class="nav">
     <ul class="no-bullet">

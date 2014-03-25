@@ -17,41 +17,44 @@
     &.list-item {
         position: relative;
         padding-right: 20px;
-        @include panel(#fff);
+        @include panel($panel-event);
         @include radius($radius: $global-radius);
 
         &.upcoming {
             &::before {
                 content: '';
-                border-color: #f2c80a;
+                border-color: $flashy-yellow;
                 @extend .clermontjs-event-label;
             }
         }
         &.past {
             &::before {
                 content: '';
-                border-color: #DCDCCB;
+                border-color: $light-brown;
                 @extend .clermontjs-event-label;
             }
         }
     }
 
     &.details {
-        @include panel(#fff);
+        @include panel($panel-event);
         @include radius($radius: $global-radius);
     }
 
 }
 .clermontjs-event-title {
+    // Add an icon to event title.
     &:before {
         @extend .fi-projection-screen:before;
         margin-right: 0.5em;
     }
+    // set color depending on the timeline.
+    // wether event is in the future or past, it will get the according class.
     &.upcoming, &.upcoming:before {
-        color: #f2c80a;
+        color: $flashy-yellow;
     }
     &.past, &.past:before {
-        color: #747471;
+        color: $brown;
     }
 }
 .clermontjs-event-map-title {
@@ -66,6 +69,126 @@
         margin-right: 0.5em;
     }
 }
+.clermontjs-event-video{
+    .fi-play-video:before{
+        font-size: 1.8em;
+        vertical-align: middle;
+    }
+}
+
+.clermontjs-event-video-fullscreen-calout {
+    @include panel($panel-event);
+    @include radius($radius: $global-radius);
+    display: none;
+}
+.clermontjs-event-video-player-fullscreen {
+    @include button($bg: $flashy-yellow);
+    @include radius($radius: $global-radius);
+    @include button-size($padding:$button-sml);
+}
+
+.clermontjs-event-video-player {
+
+    &.fullscreen{
+        position:relative;
+        width: 100%;
+        height: 100%;
+        .clermontjs-event-slidescontainer{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .clermontjs-event-videocontainer {
+            position:absolute;
+            width: 373px;
+            height: 210px;
+            z-index: 100;
+            margin: 8px 3px;
+        }
+
+        @media #{$small-up} {
+            .clermontjs-event-videocontainer {
+                position:absolute;
+                width: 200px;
+                height: 112px;
+                z-index: 100;
+                margin: 8px 3px;
+            }
+        }
+
+        @media #{$medium-up} {
+            .clermontjs-event-videocontainer {
+                position:absolute;
+                width: 200px;
+                height: 112px;
+                z-index: 100;
+                margin: 8px 3px;
+            }
+        }
+
+        @media #{$large-up} {
+            .clermontjs-event-videocontainer {
+                position:absolute;
+                width: 373px;
+                height: 210px;
+                z-index: 100;
+                margin: 8px 3px;
+            }
+        }
+    }
+
+    .clermontjs-event-videocontainer {
+        width: 560px;
+        height: 315px;
+        margin: 0 auto 1em;
+    }
+
+    .clermontjs-event-slidescontainer{
+        width: 928px;
+        height: 522px;
+        margin: 0 auto 1em;
+    }
+
+    @media #{$small-up} {
+        .clermontjs-event-videocontainer {
+            width: 500px;
+            height: 281px;
+        }
+
+        .clermontjs-event-slidescontainer{
+            width: 500px;
+            height: 281px;
+        }
+    }
+
+    @media #{$medium-up} {
+        .clermontjs-event-videocontainer {
+            width: 560px;
+            height: 315px;
+        }
+
+        .clermontjs-event-slidescontainer{
+            width: 560px;
+            height: 315px;
+        }
+    }
+
+    @media #{$large-up} {
+        .clermontjs-event-videocontainer {
+            width: 560px;
+            height: 315px;
+        }
+
+        .clermontjs-event-slidescontainer{
+            width: 928px;
+            height: 522px;
+        }
+    }
+}
+
+
+
 .map.center {
     display: block;
     margin: 1em auto;
