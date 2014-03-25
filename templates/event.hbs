@@ -21,8 +21,11 @@
         {{else}}
         <div class="clermontjs-event-video" id="clermontjs-event-video">
             <h3 class="clermontjs-event-video-title" data-video="{{page.metadata.video}}" data-slides="{{page.metadata.slides}}" data-tc="{{JSONstringify page.metadata.tc}}">Vidéo &amp; Slides</h3>
-            <div class="clermontjs-event-video-fullscreen-calout panel radius hide"> <h5><i class="fi-play-video"></i> Confort</h5>
-                <p>Les slides sont synchronisées sur la vidéo, pour plus de confort passez en plein écran <a class="small radius button clermontjs-event-video-player-fullscreen" href="#" title="Fullscreen"><i class="fi-arrows-out"></i></a></p>
+            <noscript>
+                <p>Javascript doit être activé pour regarder les vidéos.</p>
+            </noscript>
+            <div class="clermontjs-event-video-fullscreen-calout"> <h5><i class="fi-play-video"></i> Confort</h5>
+                <p>Les slides sont synchronisées sur la vidéo, pour plus de confort passez en plein écran <a class="clermontjs-event-video-player-fullscreen" href="#" title="Fullscreen"><i class="fi-arrows-out"></i></a></p>
             </div>
             <div class="clermontjs-event-video-player">
                 <div class="clermontjs-event-videocontainer">

@@ -76,6 +76,17 @@
     }
 }
 
+.clermontjs-event-video-fullscreen-calout {
+    @include panel($panel-event);
+    @include radius($radius: $global-radius);
+    display: none;
+}
+.clermontjs-event-video-player-fullscreen {
+    @include button($bg: $flashy-yellow);
+    @include radius($radius: $global-radius);
+    @include button-size($padding:$button-sml);
+}
+
 .clermontjs-event-video-player {
 
     &.fullscreen{
