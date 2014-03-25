@@ -42,6 +42,7 @@ function publish_pages {
     log "Will now publish pages"
     cd "${DIR}/${PUBLISH_DIRECTORY}"
     CHANGES=`git status -s | wc -l`
+    TAG=$(date +"%Y-%m-%d-%Hh%M")
 
     if [ $CHANGES = 0 ]
     then
@@ -51,7 +52,9 @@ function publish_pages {
 
     (git add -A . && \
     git commit -m "Latest release" && \
-    git push "${PUBLISH_REMOTE}" "${PUBLISH_BRANCH}") || show_error
+    git tag "${TAG}" && \
+    git push "${PUBLISH_REMOTE}" "${PUBLISH_BRANCH}" && \
+    git push "${PUBLISH_REMOTE}" "${TAG}") || show_error
 
     cd ${DIR}
 
