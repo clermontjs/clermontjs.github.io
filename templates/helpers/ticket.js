@@ -4,9 +4,12 @@ var Handlebars = require('handlebars');
 // Embedd eventbrite widget
 module.exports = function (event, ctx) {
     // check if upcomming
-    var date = new Date(event.metadata.date);
-    if (date.getTime() <= now.getTime() || ! event.metadata.eventbrite) {
+    var isEventBefore = ctx.data.root.env.helpers.isEventBefore;
+    if (isEventBefore(event, now)) {
         return (ctx.inverse && ctx.inverse()) || 'Cet événement est déjà passé.';
+    }
+    if (! event.metadata.eventbrite) {
+        return 'Les réservations ne sont pas encore ouvertes pour cet événement.';
     }
 
     var fn = ctx.fn || Handlebars.compile([
